@@ -1,0 +1,32 @@
+.sidebar-wrap {
+  font-family: var(--fancy-font);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  padding: 5rem;
+  gap: 1rem;
+  z-index: 99;
+  letter-spacing: 0.1rem;
+  transition: all 0.3s;
+
+  .sidebar-box {
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+
+    &:hover {
+      color: var(--brown-color);
+      transform: scale(1.2);
+      font-weight: 800;
+    }
+  }
+  .sidebar-active-box {
+    color: var(--brown-color);
+    transform: scale(1.2);
+    font-weight: bold;
+  }
+}
+.sidebar-wrap-right {
+  right: 0;
+  transition: all 0.3s;
+}

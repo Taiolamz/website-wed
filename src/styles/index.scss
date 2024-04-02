@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Bad+Script&family=Inter:slnt,wght@-10..0,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bad+Script&family=Inter:slnt,wght@-10..0,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --pink-color: #ffc0cb;
+  --text-color: #281d1d;
+  --fancy-font: "Bad Script", cursive;
+  --block-font: "Lato", sans-serif;
+  --brown-color: #a52a2a;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+// input:-webkit-autofill {
+//   -webkit-box-shadow: 0 0 0px 1000px var(--white-color) inset !important;
+//   -webkit-text-fill-color: rgba(251, 249, 249, 0.954) !important;
+// }
+
+html {
+  // font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1rem !important;
+  // background: url("../assets/rose-background.jpg");
+  // background-size: cover;
+  // object-fit: cover;
+  color: var(--text-color) !important;
+  font-family: "Bad Script", cursive;
+  font-weight: 300 ;
+  // position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  min-height: 100vh;
+  overscroll-behavior: none;
+  overflow-x: hidden;
+}

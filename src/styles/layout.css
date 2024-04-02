@@ -1,0 +1,20 @@
+.overlay-wrap {
+  min-height: 100vh;
+  background: url("../assets/rose-background.jpg");
+  background-size: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
+  min-width: 100vh;
+  right: 0;
+  left: 0;
+  z-index: -1;
+  position: fixed;
+}
+
+.layout-wrap {
+  background-size: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
+  min-height: 100vh;
+  min-width: 100vh;
+}/*# sourceMappingURL=layout.css.map */
