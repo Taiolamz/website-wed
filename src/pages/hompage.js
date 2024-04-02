@@ -17,7 +17,7 @@ const HomePage = () => {
           <img className="cake-img" src={CakeImage} alt="cake image" />
         </div>
         <div className="header-block">
-          <p className="head-text">Hassan & Jessica</p>
+          <p className="head-text">Oloruntoba & Folayemi</p>
           <p className="married-text">are getting married</p>
         </div>
 
