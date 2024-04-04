@@ -11,7 +11,7 @@ const Story = () => {
   }, []);
   return (
     <div className="story-wrap">
-      <p className="header-text">SHE SAID YES!</p>
+      {/* <p className="header-text">SHE SAID YES!</p>
       <div className="bottom-text">
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
@@ -60,7 +60,12 @@ const Story = () => {
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
-      </div>
+      </div> */}
+      <p className="quote-text">
+        I vow to fiercely love <br />
+        you in all your forms, now and forever. <br /> I promise to never forget
+        that this is a once-in-a-lifetime love.
+      </p>
     </div>
   );
 };

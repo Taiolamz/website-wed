@@ -7,34 +7,36 @@
   text-align: center;
   align-items: center;
   justify-content: center;
-  background: url("../assets/beautiful-flower-arrangement.jpg");
+  background: url("../assets/background-two.png");
   background-size: cover;
+  background-color: #f2f1f1;
 }
-.details-wrap .header-text {
-  text-transform: uppercase;
+.details-wrap .story-header {
+  font-weight: 500;
+  font-size: 2.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.4rem solid rgb(86, 2, 2);
+  margin-top: 5rem;
+}
+.details-wrap .story-subtext {
   font-size: 1.5rem;
-  font-weight: 300;
-  letter-spacing: 1.5rem;
-  font-family: var(--block-font);
+  font-weight: 500;
+  font-family: var(--fancy-font);
+  letter-spacing: 0.1rem;
+}
+.details-wrap .story-time {
+  font-weight: 400;
   text-align: center;
-  width: 50rem;
-  color: var(--brown-color) !important;
-}
-.details-wrap .text {
-  width: 50rem;
-}
-.details-wrap .btn-wrap {
   display: flex;
-  gap: 4rem;
+  width: 50rem;
+  line-height: 2rem;
+  letter-spacing: 0.1rem;
 }
-.details-wrap .btn-wrap .btn {
-  border: 0.1rem solid var(--brown-color);
-  border-radius: 0.5rem;
-  text-align: center;
-  padding: 0.5rem 2rem;
-  transition: 0.3s;
+.details-wrap .image-wrap {
+  display: flex;
+  gap: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-.details-wrap .btn-wrap .btn:hover {
-  background-color: var(--brown-color);
-  color: #f2f1f1;
+.details-wrap .image-wrap .img {
+  width: 20rem;
 }/*# sourceMappingURL=details.css.map */

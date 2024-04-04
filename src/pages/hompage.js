@@ -11,20 +11,21 @@ const HomePage = () => {
   }, []);
   return (
     <div className="homepage-wrap">
-      <div data-aos="fade-down" data-aos-duration="1000">
+      <div
+        className="header-block"
+        data-aos="fade-down"
+        data-aos-duration="1000"
+      >
         <div className="image-block">
           <img className="img" src={RingImage} alt="ring image" />
-          <img className="cake-img" src={CakeImage} alt="cake image" />
+          {/* <img className="cake-img" src={CakeImage} alt="cake image" /> */}
         </div>
-        <div className="header-block">
-          <p className="head-text">Oloruntoba & Folayemi</p>
-          <p className="married-text">are getting married</p>
-        </div>
-
-        <div className="address-block">
-          <p>10-10-2024 ​ </p>
-          <p>United States of America, Off Dalemo, Alakuko</p>
-        </div>
+        <p className="head-text">Oloruntoba & Folayemi</p>
+        <p className="married-text">are getting married</p>
+        {/* <div className="address-block"> */}
+        <p>05-11-2024 ​ </p>
+        <p>#Ease24</p>
+        {/* </div> */}
       </div>
     </div>
   );

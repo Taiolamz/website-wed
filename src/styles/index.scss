@@ -1,12 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Bad+Script&family=Inter:slnt,wght@-10..0,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bad+Script&family=Inter:slnt,wght@-10..0,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
-
-:root {
+// @import url("https://fonts.googleapis.com/css2?family=Bad+Script&family=Dosis:wght@200..800&family=Inter:slnt,wght@-10..0,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+root {
   --pink-color: #ffc0cb;
   --text-color: #281d1d;
   --fancy-font: "Bad Script", cursive;
   --block-font: "Lato", sans-serif;
   --brown-color: #a52a2a;
+  // --dosis-font: "dosis";
 }
 
 *,
@@ -34,7 +35,7 @@ body {
   // object-fit: cover;
   color: var(--text-color) !important;
   font-family: "Bad Script", cursive;
-  font-weight: 300 ;
+  font-weight: 300;
   // position: fixed;
   top: 0;
   bottom: 0;

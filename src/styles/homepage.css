@@ -5,39 +5,58 @@
   font-family: var(--fancy-font);
   min-height: 100vh;
   text-align: center;
-  align-items: center;
-  justify-content: center;
   background: url("../assets/rose-background.jpg");
   background-size: cover;
 }
+.homepage-wrap::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../assets/background-img.png");
+  opacity: 0.6;
+  background-size: cover;
+}
 .homepage-wrap .header-block {
+  bottom: 0;
   display: flex;
   flex-direction: column;
+  color: white !important;
+  padding: 0.5rem 1rem;
+  margin-top: auto; /* Bring header block to the bottom */
 }
 .homepage-wrap .header-block .head-text {
   text-transform: uppercase;
-  font-size: 2rem;
-  font-weight: 300;
+  font-size: 2.5rem;
+  font-weight: 1000;
   letter-spacing: 1.5rem;
   font-family: var(--block-font);
   text-align: center;
-  color: #a52a2a !important;
-  padding-top: unset !important;
+  color: white !important;
 }
 .homepage-wrap .header-block .married-text {
   text-align: center;
   font-family: var(--fancy-font);
   text-transform: capitalize;
   font-size: 1.5rem;
-  font-style: italic;
   letter-spacing: 0.2rem;
+  color: white !important;
+  font-weight: 0;
+}
+.homepage-wrap .header-block p {
+  color: white;
+  font-weight: 800;
 }
 .homepage-wrap .image-block {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  margin-bottom: auto;
 }
 .homepage-wrap .image-block .img {
+  position: absolute;
+  left: 0;
   width: 20rem;
   animation: rotate 4s linear infinite;
 }
@@ -48,6 +67,7 @@
 .homepage-wrap .address-block {
   font-style: italic;
   letter-spacing: 0.1rem;
+  font-weight: 500;
 }
 
 @keyframes rotate {

@@ -6,7 +6,7 @@ import Layout from "./layout";
 
 export const routes_group = [
   {
-    element: HomePage,
+    element: Layout,
     path: "/home",
   },
   {

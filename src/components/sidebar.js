@@ -43,6 +43,7 @@ const Sidebar = () => {
           ? "sidebar-wrap-right"
           : ""
       }`}
+      style={{ display: "none" }}
     >
       {sideitems.map((chi, idx) => {
         const { name, path } = chi;

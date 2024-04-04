@@ -8,7 +8,6 @@ import Faq from "../pages/faq";
 const Layout = () => {
   return (
     <div>
-      <div className="overlay-wrap"></div>
       <div className="layout-wrap">
         <HomePage />
         <Story />
