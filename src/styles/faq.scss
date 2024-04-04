@@ -41,24 +41,45 @@
 
 // }
 .about-wrap {
-  background: url("../assets/sub-background.jpg");
+  position: relative; // Necessary for positioning the pseudo-element
+  background: url("../assets/sub-background.png");
   background-size: cover;
+  padding: 2rem;
+  background-color: rgba(103, 62, 62, 0.6); // Background color with opacity
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px); // Apply blur effect
+    z-index: 1; // Ensure the overlay appears behind other content
+  }
 
   .left-wrap {
+    position: relative; // Ensure z-index works correctly
+    z-index: 2; // Ensure the content appears above the overlay
+
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    // justify-content: space-between;
+
     .left-box {
       display: flex;
       align-items: center;
+
       img {
         width: 20rem;
       }
+
       p {
         color: #fff;
         text-align: center;
         width: 40rem;
+        font-weight: 500;
       }
     }
   }

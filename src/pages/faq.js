@@ -55,8 +55,23 @@ const Faq = () => {
             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
             Exercitationem voluptas perspiciatis saepe alias dicta repudiandae
             fugit sint necessitatibus! Dolorum odit ducimus ad aperiam quam quae
-            asperiores rerum qui nihil id.
+            asperiores rerum qui nihil id. Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Neque ea eius asperiores ratione
+            dolorem eligendi ullam porro laboriosam fuga cumque? Vel maxime
+            repudiandae aut ratione blanditiis et porro nisi nam.
           </p>
+        </div>
+        <div className="left-box">
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Exercitationem voluptas perspiciatis saepe alias dicta repudiandae
+            fugit sint necessitatibus! Dolorum odit ducimus ad aperiam quam quae
+            asperiores rerum qui nihil id. Lorem, ipsum dolor sit amet
+            consectetur adipisicing elit. Error velit id consequatur asperiores
+            quis reiciendis dolores sapiente magni possimus, ab earum quod,
+            nobis distinctio? Ex nemo deserunt velit quam sequi!
+          </p>
+          <img src={ImageOne} alt="" />
         </div>
       </div>
       {/* left side end */}
