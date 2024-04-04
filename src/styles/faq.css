@@ -25,6 +25,7 @@
   align-items: center;
 }
 .about-wrap .left-wrap .left-box {
+  gap: 10rem;
   display: flex;
   align-items: center;
 }
@@ -33,7 +34,6 @@
 }
 .about-wrap .left-wrap .left-box p {
   color: #fff;
-  text-align: center;
   width: 40rem;
   font-weight: 500;
 }/*# sourceMappingURL=faq.css.map */
