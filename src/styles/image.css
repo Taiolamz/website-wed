@@ -1,0 +1,33 @@
+.photo-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background: url("../assets/background-two.png");
+  background-size: cover;
+}
+.photo-wrap .text-wrap {
+  display: flex;
+  justify-content: center;
+}
+.photo-wrap .text-wrap p {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: 500;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.4rem solid rgb(86, 2, 2);
+  margin-top: 5rem;
+}
+.photo-wrap .image-wrap {
+  display: flex;
+  gap: 3rem;
+  overflow: hidden; /* Hide overflow content */
+}
+.photo-wrap .image-wrap img {
+  width: 20rem;
+}
+.photo-wrap .view-text {
+  display: flex;
+  justify-content: right;
+  padding: 4rem;
+}/*# sourceMappingURL=image.css.map */

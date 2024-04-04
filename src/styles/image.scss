@@ -1,0 +1,47 @@
+.photo-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background: url("../assets/background-two.png");
+  background-size: cover;
+  .text-wrap {
+    display: flex;
+    justify-content: center;
+    p {
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 2.5rem;
+      font-weight: 500;
+      padding-bottom: 0.5rem;
+      border-bottom: 0.4rem solid rgb(86, 2, 2);
+      margin-top: 5rem;
+    }
+  }
+  .image-wrap {
+    // padding:  4rem;
+    display: flex;
+    gap: 3rem;
+
+    overflow: hidden; /* Hide overflow content */
+    // animation: infiniteScroll 70s linear infinite; /* Adjust animation duration as needed */
+    // width: calc(250px * 18);
+
+    img {
+      width: 20rem;
+    }
+  }
+  .view-text {
+    display: flex;
+    justify-content: right;
+    padding: 4rem;
+  }
+}
+
+// @keyframes infiniteScroll {
+//   0% {
+//     transform: translateX(0);
+//   }
+//   100% {
+//     transform: translateX(calc(-250px * 9)); /* Scroll images to the left */
+//   }
+// }
