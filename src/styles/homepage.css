@@ -8,6 +8,7 @@
   text-align: center;
   background: url("../assets/rose-background.jpg");
   background-size: cover;
+  justify-content: center;
 }
 .homepage-wrap::before {
   content: "";
@@ -30,16 +31,20 @@
   background: #000000;
   opacity: 0.2;
 }
-.homepage-wrap .header-block {
-  z-index: 3;
+.homepage-wrap .img {
+  position: absolute;
+  left: 0;
   bottom: 0;
+  width: 20rem;
+  animation: rotate 4s linear infinite;
+}
+.homepage-wrap .image-block {
   display: flex;
   flex-direction: column;
-  color: white !important;
-  padding: 0.5rem 1rem;
-  margin-top: auto; /* Bring header block to the bottom */
+  align-items: center;
+  z-index: 999;
 }
-.homepage-wrap .header-block .head-text {
+.homepage-wrap .image-block .head-text {
   text-transform: uppercase;
   font-size: 2.5rem;
   font-weight: 1000;
@@ -48,7 +53,7 @@
   text-align: center;
   color: white !important;
 }
-.homepage-wrap .header-block .married-text {
+.homepage-wrap .image-block .married-text {
   text-align: center;
   font-family: var(--fancy-font);
   text-transform: capitalize;
@@ -57,24 +62,9 @@
   color: white !important;
   font-weight: 0;
 }
-.homepage-wrap .header-block p {
+.homepage-wrap .image-block .sub-txt {
   color: white;
   font-weight: 800;
-}
-.homepage-wrap .image-block {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: auto;
-}
-.homepage-wrap .image-block .img {
-  position: absolute;
-  left: 0;
-  width: 20rem;
-  animation: rotate 4s linear infinite;
-}
-.homepage-wrap .image-block .cake-img {
-  margin-top: -5rem;
-  width: 25rem;
 }
 .homepage-wrap .address-block {
   font-style: italic;

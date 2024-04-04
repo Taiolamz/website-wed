@@ -8,6 +8,7 @@
   text-align: center;
   background: url("../assets/rose-background.jpg");
   background-size: cover;
+  justify-content: center;
 
   &::before {
     content: "";
@@ -34,16 +35,21 @@
     // z-index: 4; // Ensure this overlay appears on top of the background image
   }
 
-  .header-block {
-    // position: absolute;
-    z-index: 3;
+
+  .img {
+    // position: fixed;
+    position: absolute;
+    left: 0;
     bottom: 0;
+    width: 20rem;
+    animation: rotate 4s linear infinite;
+  }
+  .image-block {
     display: flex;
     flex-direction: column;
-    color: #ffff !important;
-    // background-color: #a52a2a;
-    padding: 0.5rem 1rem;
-    margin-top: auto; /* Bring header block to the bottom */
+    align-items: center;
+    z-index:999;
+    // margin-bottom: auto;
 
     .head-text {
       text-transform: uppercase;
@@ -64,29 +70,9 @@
       color: #ffff !important;
       font-weight: 000;
     }
-    p {
-      // color: #a52a2a;
+    .sub-txt {
       color: #ffff;
       font-weight: 800;
-    }
-  }
-
-  .image-block {
-    display: flex;
-    flex-direction: column;
-    // align-items: center;
-    margin-bottom: auto;
-
-    .img {
-      // position: fixed;
-      position: absolute;
-      left: 0;
-      width: 20rem;
-      animation: rotate 4s linear infinite;
-    }
-    .cake-img {
-      margin-top: -5rem;
-      width: 25rem;
     }
   }
 
