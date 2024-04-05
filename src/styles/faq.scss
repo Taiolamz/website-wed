@@ -12,6 +12,7 @@
     position: absolute;
     right: 0;
     left: 0;
+    top: 0;
 
     .sticky {
       position: fixed;
@@ -50,6 +51,8 @@
         @media screen and (max-width: 768px) {
           flex-direction: column;
           gap: 2rem;
+          justify-content: center;
+          align-items: center;
         }
 
         img {

@@ -12,6 +12,7 @@
   position: absolute;
   right: 0;
   left: 0;
+  top: 0;
 }
 .about-wrap .about-box .sticky {
   position: fixed;
@@ -48,6 +49,8 @@
   .about-wrap .about-box .left-wrap .left-box {
     flex-direction: column;
     gap: 2rem;
+    justify-content: center;
+    align-items: center;
   }
 }
 .about-wrap .about-box .left-wrap .left-box img {
