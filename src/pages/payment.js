@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "../styles/form.css";
 import { FaArrowLeft, FaTimes } from "react-icons/fa";
 import ImageOne from "../assets/image-one.jpg";
+// import PaystackPop from "react-paystack";
+import PaystackPop from "@paystack/inline-js";
 
 const Payment = ({ onCancel }) => {
   const [details, setDetails] = useState({
@@ -10,6 +12,7 @@ const Payment = ({ onCancel }) => {
     phone_number: "",
     amount: "",
   });
+  const [selectAmount, setSelectAmount] = useState("");
 
   const formatLabel = (key) => {
     return key
@@ -49,17 +52,37 @@ const Payment = ({ onCancel }) => {
   ];
 
   function formatNumber(number) {
-    // Check if the input is a number
-
-    // Use toLocaleString to add commas for thousands separator
-    // and format the number to two decimal places
     return number.toLocaleString(undefined, {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
     });
   }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const paystackKey = "pk_test_d7c4fae3a0c8d22ff182d6208d72b42b0b754e76";
+    const { full_name, email, phone_number } = details;
 
-  const [selectAmount, setSelectAmount] = useState("");
+    if (full_name && email && phone_number && selectAmount) {
+      let handler = PaystackPop.setup({
+        key: paystackKey,
+        name: full_name,
+        email: email,
+        amount: selectAmount * 100,
+        ref: "" + Math.floor(Math.random() * 1000000000 + 1),
+        onClose: () => {
+          alert("Window closed.");
+        },
+        callback: (response) => {
+          let message = "Payment complete! Reference: " + response.reference;
+          alert(message);
+        },
+      });
+
+      handler.openIframe();
+    } else {
+      return;
+    }
+  };
 
   return (
     <div className="form-wrap">
@@ -76,7 +99,7 @@ const Payment = ({ onCancel }) => {
           <p className="text-head">We love and Appreciate You</p>
         </div>
         {/* <FaTimes size={20} className="cancel-icon" onClick={onCancel} /> */}
-        <form className="form-group">
+        <form className="form-group" onSubmit={handleSubmit}>
           {Object.keys(details).map((detail, index) => (
             <div className="form-box">
               {detail === "amount" ? (
@@ -87,14 +110,13 @@ const Payment = ({ onCancel }) => {
               </label>
               <input
                 name={detail}
-                pattern="[0-9]*"
-                type={detail === "phone_number" ? "number" : "text"}
+                type="text"
                 id={detail}
                 placeholder={`Enter ${formatLabel(detail).toLowerCase()}`}
                 value={
                   detail === "amount"
                     ? formatNumber(selectAmount)
-                    : `${details[detail]}`
+                    : details[detail]
                 }
                 className={`input ${
                   details[detail]
@@ -127,7 +149,18 @@ const Payment = ({ onCancel }) => {
               )}
             </div>
           ))}
-          <button className="btn-wrap">Proceed to Paystack</button>
+          <button
+            className={`btn-wrap ${
+              details.full_name &&
+              details.email &&
+              selectAmount &&
+              details.phone_number
+                ? ""
+                : "btn-disable"
+            }`}
+          >
+            Proceed to Paystack
+          </button>
         </form>
       </div>
       {/* form wrap end*/}

@@ -122,4 +122,9 @@
   cursor: pointer;
   transition: all 0.3s;
   font-weight: 500;
+}
+.form-wrap .right-wrap .form-group .btn-disable {
+  background: #ccc;
+  cursor: not-allowed;
+  color: #343434;
 }/*# sourceMappingURL=form.css.map */
