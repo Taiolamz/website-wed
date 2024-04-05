@@ -35,7 +35,7 @@ const Layout = () => {
 
       {/* modal start */}
       <Modal effect="fadeInLeft" visible={showModal}>
-        <Payment />
+        <Payment onCancel={() => setShowModal(false)} />
       </Modal>
       {/* modal end */}
     </div>
