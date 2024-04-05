@@ -35,6 +35,7 @@
 .btn-wrap-lay .btn-box p {
   justify-content: center;
   transform: translateY(7px);
+  font-size: 0.8rem;
 }
 @media screen and (max-width: 768px) {
   .btn-wrap-lay .btn-box p {
@@ -42,7 +43,7 @@
   }
 }
 .btn-wrap-lay .btn-box .icon {
-  transform: translateY(10px);
+  transform: translateY(8px);
 }
 @media screen and (max-width: 768px) {
   .btn-wrap-lay .btn-box .icon {

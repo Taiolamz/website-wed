@@ -37,13 +37,14 @@
     p {
       justify-content: center;
       transform: translateY(7px);
+      font-size: .8rem;
 
       @media screen and (max-width: 768px) {
         font-size: 0.6rem;
       }
     }
     .icon {
-      transform: translateY(10px);
+      transform: translateY(8px);
 
       @media screen and (max-width: 768px) {
        width: 1rem !important;

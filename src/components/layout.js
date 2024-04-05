@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import HomePage from "../pages/hompage";
 import Story from "../pages/story";
 import "../styles/layout.css";
@@ -8,8 +8,11 @@ import Photo from "../pages/photo";
 import Rep from "../pages/rep";
 import { FaMoneyBillWave } from "react-icons/fa";
 import { MdEditNote } from "react-icons/md";
+import Payment from "../pages/payment";
+import Modal from "react-awesome-modal";
 
 const Layout = () => {
+  const [showModal, setShowModal] = useState(false);
   return (
     <div className="layout-con">
       <HomePage />
@@ -24,12 +27,17 @@ const Layout = () => {
           <FaMoneyBillWave size={20} className="icon" />
           <p>Wishlsit</p>
         </div>
-        <div className="btn-box">
+        <div className="btn-box" onClick={() => setShowModal(true)}>
           <MdEditNote size={20} className="icon" />
           <p>Cash gift</p>
         </div>
       </div>
-      
+
+      {/* modal start */}
+      <Modal effect="fadeInLeft" visible={showModal}>
+        <Payment />
+      </Modal>
+      {/* modal end */}
     </div>
   );
 };
