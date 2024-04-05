@@ -9,6 +9,13 @@
   background: url("../assets/rose-background.jpg");
   background-size: cover;
   justify-content: center;
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .homepage-wrap {
+    width: 100%;
+    padding: 0.5rem 2rem;
+  }
 }
 .homepage-wrap::before {
   content: "";
@@ -20,6 +27,12 @@
   background: url("../assets/background-img.png");
   opacity: 0.6;
   background-size: cover;
+}
+@media screen and (max-width: 768px) {
+  .homepage-wrap::before {
+    background: url("../assets/bg-image-one.png");
+    background-size: cover;
+  }
 }
 .homepage-wrap::after {
   content: "";
@@ -37,6 +50,14 @@
   bottom: 0;
   width: 20rem;
   animation: rotate 4s linear infinite;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (max-width: 768px) {
+  .homepage-wrap .img {
+    left: -5rem;
+    padding: 4rem;
+  }
 }
 .homepage-wrap .image-block {
   display: flex;
@@ -44,7 +65,19 @@
   align-items: center;
   z-index: 999;
 }
-.homepage-wrap .image-block .head-text {
+.homepage-wrap .image-block .image-box {
+  border-top: 0.1rem solid #c6bbbb;
+  border-bottom: 0.1rem solid #c6bbbb;
+  padding: 0.5rem 8rem;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 768px) {
+  .homepage-wrap .image-block .image-box {
+    padding: 0;
+  }
+}
+.homepage-wrap .image-block .image-box .head-text {
   text-transform: uppercase;
   font-size: 2.5rem;
   font-weight: 1000;
@@ -53,7 +86,14 @@
   text-align: center;
   color: white !important;
 }
-.homepage-wrap .image-block .married-text {
+@media screen and (max-width: 768px) {
+  .homepage-wrap .image-block .image-box .head-text {
+    font-size: 1.2rem;
+    letter-spacing: 0.7rem;
+    width: 100%;
+  }
+}
+.homepage-wrap .image-block .image-box .married-text {
   text-align: center;
   font-family: var(--fancy-font);
   text-transform: capitalize;
@@ -62,14 +102,20 @@
   color: white !important;
   font-weight: 0;
 }
-.homepage-wrap .image-block .sub-txt {
+@media screen and (max-width: 768px) {
+  .homepage-wrap .image-block .image-box .married-text {
+    font-size: 1rem;
+  }
+}
+.homepage-wrap .image-block .image-box .sub-txt {
   color: white;
   font-weight: 800;
 }
-.homepage-wrap .address-block {
-  font-style: italic;
-  letter-spacing: 0.1rem;
-  font-weight: 500;
+@media screen and (max-width: 768px) {
+  .homepage-wrap .image-block .image-box .sub-txt {
+    font-size: 0.7rem;
+    font-style: italic;
+  }
 }
 
 @keyframes rotate {

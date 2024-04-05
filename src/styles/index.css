@@ -6,6 +6,7 @@ root {
   --fancy-font: "Bad Script", cursive;
   --block-font: "Lato", sans-serif;
   --brown-color: #a52a2a;
+  --pri-color: rgb(86, 2, 2);
 }
 
 *,
@@ -27,8 +28,30 @@ body {
   font-weight: 300;
   top: 0;
   bottom: 0;
-  width: 100vw;
+  min-width: 100vw;
   min-height: 100vh;
   overscroll-behavior: none;
   overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+/* Hide vertical scrollbar */
+body::-webkit-scrollbar {
+  width: 0.6rem;
+}
+
+/* Track */
+body::-webkit-scrollbar-track {
+  background: rgb(59, 56, 56);
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+  background: #560256;
+  border-radius: 0.25rem;
+}
+
+/* Handle on hover */
+body::-webkit-scrollbar-thumb:hover {
+  background: #310131;
 }/*# sourceMappingURL=index.css.map */

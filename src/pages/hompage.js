@@ -16,11 +16,13 @@ const HomePage = () => {
         data-aos="fade-down"
         data-aos-duration="1000"
       >
-        <p className="head-text">Oloruntoba & Folayemi</p>
-        <p className="married-text">are getting married</p>
-        {/* <div className="address-block"> */}
-        <p className="sub-txt">05-11-2024 ​ </p>
-        <p className="sub-txt">#Ease24</p>
+        <div className="image-box">
+          <p className="head-text">Folayemi & Oloruntoba </p>
+          <p className="married-text">are getting married</p>
+          {/* <div className="address-block"> */}
+          <p className="sub-txt">05-11-2024 ​ </p>
+          <p className="sub-txt">#Ease24</p>
+        </div>
       </div>
       {/* </div> */}
 

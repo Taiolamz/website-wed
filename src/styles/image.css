@@ -15,19 +15,39 @@
   font-size: 2.5rem;
   font-weight: 500;
   padding-bottom: 0.5rem;
-  border-bottom: 0.4rem solid rgb(86, 2, 2);
+  border-bottom: 0.2rem solid #560256;
   margin-top: 5rem;
+}
+@media screen and (max-width: 768px) {
+  .photo-wrap .text-wrap p {
+    width: 20rem;
+    font-size: 1.2rem;
+  }
 }
 .photo-wrap .image-wrap {
   display: flex;
   gap: 3rem;
-  overflow: hidden; /* Hide overflow content */
+  overflow: hidden;
 }
 .photo-wrap .image-wrap img {
   width: 20rem;
+}
+@media screen and (max-width: 768px) {
+  .photo-wrap .image-wrap img {
+    width: 10rem;
+  }
 }
 .photo-wrap .view-text {
   display: flex;
   justify-content: right;
   padding: 4rem;
+  cursor: pointer;
+  color: #000;
+  text-shadow: 2px 2px #9a9696;
+  font-weight: 800;
+}
+@media screen and (max-width: 768px) {
+  .photo-wrap .view-text {
+    padding: 0.3rem;
+  }
 }/*# sourceMappingURL=image.css.map */

@@ -1,51 +1,29 @@
-// .container-wrap{
 
-// }
-.overlay-wrap {
-  min-height: 100vh;
-  background: url("../assets/rose-background.jpg");
-  background-size: cover;
-  object-fit: cover;
-  min-width: 100vh;
-  right: 0;
-  left: 0;
-  z-index: -1;
-  position: fixed;
-}
 
-.layout-wrap {
-  background-size: cover;
-  object-fit: cover;
-  min-height: 100vh;
-  min-width: 100vh;
-}
 .btn-wrap-lay {
   display: flex;
   gap: 1rem;
   text-transform: uppercase;
   position: fixed;
-  // top: 50%;
-  // left: 50%;
-  // transform: translate(-50%, -50%);
   bottom: 1rem;
   right: 0;
   justify-content: center;
   align-items: center;
-  // left: 50%;
   z-index: 9999;
-  // transform: translate(-50%, -50%);
   padding-right: 3rem;
-  // .btn-box {
-  // }
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    padding-right: 1rem;
+  }
+
   .btn-box {
     display: flex;
     gap: 0.5rem;
-    // align-items: center;
-    background: rgb(131, 37, 37);
+    background: #560256;;
     border-radius: 0.5rem;
     padding: 0.3rem 3rem;
     color: #fff;
-    // text-align: center;
     cursor: pointer;
     transition: all 0.3s;
     font-weight: 500;
@@ -59,9 +37,18 @@
     p {
       justify-content: center;
       transform: translateY(7px);
+
+      @media screen and (max-width: 768px) {
+        font-size: 0.6rem;
+      }
     }
     .icon {
       transform: translateY(10px);
+
+      @media screen and (max-width: 768px) {
+       width: 1rem !important;
+       transform:  translateY(5px);
+      }
     }
   }
 }
@@ -71,7 +58,7 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px); /* Adjust the bounce height as needed */
+    transform: translateY(-10px);
   }
   100% {
     transform: translateY(0);

@@ -7,10 +7,10 @@ const Photo = () => {
   return (
     <div className="photo-wrap">
       <div className="text-wrap">
-        <p>Loved up pictures </p>
+        <p>🫶🏽 Our Loved up pictures 🫶🏽</p>
       </div>
-        <Marquee>
-      <div className="image-wrap">
+      <Marquee>
+        <div className="image-wrap">
           <img src={ImageOne} alt="image" />
           <img src={ImageOne} alt="image" />
           <img src={ImageOne} alt="image" />
@@ -21,9 +21,20 @@ const Photo = () => {
           <img src={ImageOne} alt="image" />
           <img src={ImageOne} alt="image" />
           <img src={ImageOne} alt="image" />
-      </div>
-        </Marquee>
-      <p className="view-text">view all</p>
+          <br />
+        </div>
+      </Marquee>
+      <p
+        className="view-text"
+        onClick={() => {
+          window.open(
+            "https://ajaoolawalephotography.pixieset.com/thepre-wedding/",
+            "_blank"
+          );
+        }}
+      >
+        Check out our loved up pictures
+      </p>
     </div>
   );
 };

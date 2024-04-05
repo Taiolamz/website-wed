@@ -4,8 +4,22 @@
   background-size: cover;
   padding: 2rem;
   background-color: rgba(103, 62, 62, 0.6);
+  height: 30rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
-.about-wrap::before {
+.about-wrap .about-box {
+  position: absolute;
+  right: 0;
+  left: 0;
+}
+.about-wrap .about-box .sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.about-wrap .about-box::before {
   content: "";
   position: absolute;
   top: 0;
@@ -16,7 +30,7 @@
           backdrop-filter: blur(10px);
   z-index: 1;
 }
-.about-wrap .left-wrap {
+.about-wrap .about-box .left-wrap {
   position: relative;
   z-index: 2;
   display: flex;
@@ -24,16 +38,41 @@
   justify-content: center;
   align-items: center;
 }
-.about-wrap .left-wrap .left-box {
+.about-wrap .about-box .left-wrap .left-box {
   gap: 10rem;
   display: flex;
   align-items: center;
+  padding: 2rem;
 }
-.about-wrap .left-wrap .left-box img {
+@media screen and (max-width: 768px) {
+  .about-wrap .about-box .left-wrap .left-box {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+.about-wrap .about-box .left-wrap .left-box img {
   width: 20rem;
 }
-.about-wrap .left-wrap .left-box p {
+@media screen and (max-width: 768px) {
+  .about-wrap .about-box .left-wrap .left-box img {
+    width: 15rem;
+  }
+}
+.about-wrap .about-box .left-wrap .left-box p {
   color: #fff;
   width: 40rem;
   font-weight: 500;
+}
+@media screen and (max-width: 768px) {
+  .about-wrap .about-box .left-wrap .left-box p {
+    width: 20rem;
+    padding: 2rem;
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .about-wrap .about-box .left-wrap .down-box {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }/*# sourceMappingURL=faq.css.map */

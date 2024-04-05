@@ -7,6 +7,7 @@ root {
   --fancy-font: "Bad Script", cursive;
   --block-font: "Lato", sans-serif;
   --brown-color: #a52a2a;
+  --pri-color: rgb(86, 2, 2);
   // --dosis-font: "dosis";
 }
 
@@ -24,23 +25,40 @@ root {
 // }
 
 html {
-  // font-size: 62.5%;
   box-sizing: border-box;
 }
 
 body {
   font-size: 1rem !important;
-  // background: url("../assets/rose-background.jpg");
-  // background-size: cover;
-  // object-fit: cover;
   color: var(--text-color) !important;
   font-family: "Bad Script", cursive;
   font-weight: 300;
-  // position: fixed;
   top: 0;
   bottom: 0;
-  width: 100vw;
+  min-width: 100vw;
   min-height: 100vh;
   overscroll-behavior: none;
   overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+/* Hide vertical scrollbar */
+body::-webkit-scrollbar {
+  width: 0.6rem;
+}
+
+/* Track */
+body::-webkit-scrollbar-track {
+  background: rgb(59, 56, 56);
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+  background: #560256;
+  border-radius: 0.25rem;
+}
+
+/* Handle on hover */
+body::-webkit-scrollbar-thumb:hover {
+  background: #310131;
 }

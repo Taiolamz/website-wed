@@ -1,5 +1,5 @@
 .homepage-wrap {
-  position: relative; // Necessary for positioning the pseudo-elements
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -9,6 +9,12 @@
   background: url("../assets/rose-background.jpg");
   background-size: cover;
   justify-content: center;
+  width: 100%;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    padding: 0.5rem 2rem;
+  }
 
   &::before {
     content: "";
@@ -20,7 +26,11 @@
     background: url("../assets/background-img.png");
     opacity: 0.6;
     background-size: cover;
-    // z-index: 1; // Ensure this overlay appears below the content
+
+    @media screen and (max-width: 768px) {
+      background: url("../assets/bg-image-one.png");
+      background-size: cover;
+    }
   }
 
   &::after {
@@ -30,56 +40,78 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: #000000; // Another overlay color with opacity
-    opacity: 0.2; // Adjust opacity as needed
-    // z-index: 4; // Ensure this overlay appears on top of the background image
+    background: #000000;
+    opacity: 0.2;
   }
 
-
   .img {
-    // position: fixed;
     position: absolute;
     left: 0;
     bottom: 0;
     width: 20rem;
     animation: rotate 4s linear infinite;
+    object-fit: cover;
+    @media screen and (max-width: 768px) {
+      left: -5rem;
+      padding: 4rem;
+    }
   }
   .image-block {
     display: flex;
     flex-direction: column;
     align-items: center;
-    z-index:999;
-    // margin-bottom: auto;
+    z-index: 999;
 
-    .head-text {
-      text-transform: uppercase;
-      font-size: 2.5rem;
-      font-weight: 1000;
-      letter-spacing: 1.5rem;
-      font-family: var(--block-font);
-      text-align: center;
-      color: #ffff !important;
-    }
-    .married-text {
-      text-align: center;
-      font-family: var(--fancy-font);
-      text-transform: capitalize;
-      font-size: 1.5rem;
-      // font-style: italic;
-      letter-spacing: 0.2rem;
-      color: #ffff !important;
-      font-weight: 000;
-    }
-    .sub-txt {
-      color: #ffff;
-      font-weight: 800;
-    }
-  }
+    .image-box {
+      border-top: 0.1rem solid #c6bbbb;
+      border-bottom: 0.1rem solid #c6bbbb;
+      padding: 0.5rem 8rem;
+      display: flex;
+      flex-direction: column;
 
-  .address-block {
-    font-style: italic;
-    letter-spacing: 0.1rem;
-    font-weight: 500;
+      @media screen and (max-width: 768px) {
+        // width: 100%;
+        padding: 0;
+      }
+
+      .head-text {
+        text-transform: uppercase;
+        font-size: 2.5rem;
+        font-weight: 1000;
+        letter-spacing: 1.5rem;
+        font-family: var(--block-font);
+        text-align: center;
+        color: #ffff !important;
+
+        @media screen and (max-width: 768px) {
+          font-size: 1.2rem;
+          letter-spacing: 0.7rem;
+          width: 100%;
+        }
+      }
+      .married-text {
+        text-align: center;
+        font-family: var(--fancy-font);
+        text-transform: capitalize;
+        font-size: 1.5rem;
+        // font-style: italic;
+        letter-spacing: 0.2rem;
+        color: #ffff !important;
+        font-weight: 000;
+
+        @media screen and (max-width: 768px) {
+          font-size: 1rem;
+        }
+      }
+      .sub-txt {
+        color: #ffff;
+        font-weight: 800;
+        @media screen and (max-width: 768px) {
+          font-size: 0.7rem;
+          font-style: italic;
+        }
+      }
+    }
   }
 }
 @keyframes rotate {
