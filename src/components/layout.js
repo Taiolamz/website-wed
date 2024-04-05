@@ -14,7 +14,7 @@ import Modal from "react-awesome-modal";
 const Layout = () => {
   const [showModal, setShowModal] = useState(false);
   return (
-    <div className="layout-con">
+    <div className="layout-con" style={{minWidth:"100%"}}>
       <HomePage />
       <Story />
       <Details />

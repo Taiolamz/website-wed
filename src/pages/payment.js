@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../styles/form.css";
-import { FaTimes } from "react-icons/fa";
+import { FaArrowLeft, FaTimes } from "react-icons/fa";
 import ImageOne from "../assets/image-one.jpg";
 
 const Payment = ({ onCancel }) => {
@@ -48,6 +48,17 @@ const Payment = ({ onCancel }) => {
     },
   ];
 
+  function formatNumber(number) {
+    // Check if the input is a number
+
+    // Use toLocaleString to add commas for thousands separator
+    // and format the number to two decimal places
+    return number.toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
+  }
+
   const [selectAmount, setSelectAmount] = useState("");
 
   return (
@@ -60,45 +71,60 @@ const Payment = ({ onCancel }) => {
 
       {/* form wrap start*/}
       <div className="right-wrap">
-        <p className="text-head">We love and Appreciate You</p>
-        <FaTimes size={20} className="cancel-icon" onClick={onCancel} />
+        <div className="title-wrap">
+          <FaArrowLeft className="icon" onClick={onCancel} />
+          <p className="text-head">We love and Appreciate You</p>
+        </div>
+        {/* <FaTimes size={20} className="cancel-icon" onClick={onCancel} /> */}
         <form className="form-group">
           {Object.keys(details).map((detail, index) => (
             <div className="form-box">
-              <label key={index} htmlFor={formatLabel(detail)}></label>
+              {detail === "amount" ? (
+                <span className="currency-unit"> NGN </span>
+              ) : null}
+              <label key={index} htmlFor={formatLabel(detail)}>
+                {/* {formatLabel(detail)} */}
+              </label>
               <input
                 name={detail}
+                pattern="[0-9]*"
+                type={detail === "phone_number" ? "number" : "text"}
                 id={detail}
                 placeholder={`Enter ${formatLabel(detail).toLowerCase()}`}
-                value={detail === "amount" ? selectAmount : details[detail]}
-                className={`input ${details[detail] ? "input-active" : ""} `}
+                value={
+                  detail === "amount"
+                    ? formatNumber(selectAmount)
+                    : `${details[detail]}`
+                }
+                className={`input ${
+                  details[detail]
+                    ? "input-active"
+                    : detail === "amount"
+                    ? "input-placeholder"
+                    : ""
+                } `}
                 onChange={(e) => {
-                  if (detail === "amount") {
-                    setDetails((prev) => {
-                      return {
-                        ...prev,
-                        amount: selectAmount || e.target.value,
-                      };
-                    });
+                  const { name, value } = e.target;
+                  if (name === "amount") {
+                    setSelectAmount(value);
                   } else {
-                    handleChange(detail, e.target.value);
+                    handleChange(name, value);
                   }
                 }}
               />
-              {detail === "amount" ? (
+              {detail === "amount" && (
                 <div className="amount-wrap">
                   {amountDisplay.map((chi, idx) => (
                     <div
                       className="amount"
-                      onClick={() => setSelectAmount(chi?.label)}
+                      onClick={() => setSelectAmount(chi.value)}
+                      key={idx}
                     >
-                      <p className="text" key={idx}>
-                        {chi.label}
-                      </p>
+                      <p className="text">{chi.label}</p>
                     </div>
                   ))}
                 </div>
-              ) : null}
+              )}
             </div>
           ))}
           <button className="btn-wrap">Proceed to Paystack</button>
