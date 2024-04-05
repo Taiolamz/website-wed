@@ -29,6 +29,7 @@ const Layout = () => {
           <p>Cash gift</p>
         </div>
       </div>
+      
     </div>
   );
 };
