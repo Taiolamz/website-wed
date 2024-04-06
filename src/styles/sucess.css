@@ -1,0 +1,39 @@
+.success-wrap {
+  background: #fff;
+  padding: 2rem;
+  width: 30rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  position: relative;
+}
+.success-wrap .icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 2rem;
+  cursor: pointer;
+}
+.success-wrap .emoji {
+  font-size: 3rem;
+}
+.success-wrap .text {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.success-wrap .return-wrap {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  background: #560256;
+  padding: 0.5rem 2rem;
+  font-weight: 500;
+  color: #fff;
+  border-radius: 0.5rem;
+  transition: all 0.3s;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+.success-wrap .return-wrap:hover {
+  transform: translateY(-2px);
+}/*# sourceMappingURL=sucess.css.map */

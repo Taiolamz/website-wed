@@ -4,8 +4,11 @@ import { FaArrowLeft, FaTimes } from "react-icons/fa";
 import ImageOne from "../assets/image-one.jpg";
 // import PaystackPop from "react-paystack";
 import PaystackPop from "@paystack/inline-js";
+import Success from "./success-pay";
+import Modal from "react-awesome-modal";
+import { useNavigate } from "react-router";
 
-const Payment = ({ onCancel }) => {
+const Payment = ({ onCancel, setPaymentModal, setShowSuccessModal }) => {
   const [details, setDetails] = useState({
     full_name: "",
     email: "",
@@ -60,22 +63,38 @@ const Payment = ({ onCancel }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const paystackKey = "pk_test_d7c4fae3a0c8d22ff182d6208d72b42b0b754e76";
-    const { full_name, email, phone_number } = details;
+    const { full_name, email, phone_number, amount } = details;
 
-    if (full_name && email && phone_number && selectAmount) {
+    if (full_name && email && phone_number && (selectAmount || amount)) {
       let handler = PaystackPop.setup({
         key: paystackKey,
         name: full_name,
         email: email,
-        amount: selectAmount * 100,
+        amount: amount * 100 || selectAmount * 100,
         ref: "" + Math.floor(Math.random() * 1000000000 + 1),
         onClose: () => {
           alert("Window closed.");
         },
-        callback: (response) => {
-          let message = "Payment complete! Reference: " + response.reference;
-          alert(message);
+        onSuccess: () => {
+          setPaymentModal(false);
+          setShowSuccessModal(true);
+          setSelectAmount("");
+          setDetails((prev) => {
+            return {
+              ...prev,
+              full_name: "",
+              email: "",
+              phone_number: "",
+              amount: "",
+            };
+          });
         },
+        // callback: (response) => {
+        //   let message = "Payment complete! Reference: " + response.reference;
+        //   alert(message);
+        //   setShowSuccessModal(true);
+        //   onCancel();
+        // },
       });
 
       handler.openIframe();
@@ -95,7 +114,22 @@ const Payment = ({ onCancel }) => {
       {/* form wrap start*/}
       <div className="right-wrap">
         <div className="title-wrap">
-          <FaArrowLeft className="icon" onClick={onCancel} />
+          <FaArrowLeft
+            className="icon"
+            onClick={() => {
+              onCancel();
+              setDetails((prev) => {
+                return {
+                  ...prev,
+                  full_name: "",
+                  email: "",
+                  phone_number: "",
+                  amount: "",
+                };
+              });
+              setSelectAmount("");
+            }}
+          />
           <p className="text-head">We love and Appreciate You</p>
         </div>
         {/* <FaTimes size={20} className="cancel-icon" onClick={onCancel} /> */}
