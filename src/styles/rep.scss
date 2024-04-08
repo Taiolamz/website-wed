@@ -2,7 +2,7 @@
   display: flex;
   text-align: center;
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: .8rem;
   text-transform: capitalize;
   justify-content: center;
   margin-top: 3rem;
@@ -11,9 +11,7 @@
     p {
       border-top: 1px solid rgb(129, 120, 120);
       border-bottom: 1px solid rgb(129, 120, 120);
-    //   padding-top: .5rem;
       padding: .5rem 3rem;
-    //   padding-bottom: .5rem;
     }
   }
 }

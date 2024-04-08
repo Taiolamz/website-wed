@@ -1,12 +1,8 @@
 import React, { useState } from "react";
 import "../styles/form.css";
-import { FaArrowLeft, FaTimes } from "react-icons/fa";
+import { FaArrowLeft } from "react-icons/fa";
 import ImageOne from "../assets/image-one.jpg";
-// import PaystackPop from "react-paystack";
 import PaystackPop from "@paystack/inline-js";
-import Success from "./success-pay";
-import Modal from "react-awesome-modal";
-import { useNavigate } from "react-router";
 
 const Payment = ({ onCancel, setPaymentModal, setShowSuccessModal }) => {
   const [details, setDetails] = useState({
@@ -62,7 +58,7 @@ const Payment = ({ onCancel, setPaymentModal, setShowSuccessModal }) => {
   }
   const handleSubmit = (e) => {
     e.preventDefault();
-    const paystackKey = "pk_test_d7c4fae3a0c8d22ff182d6208d72b42b0b754e76";
+    const paystackKey = process.env.REACT_APP_PAYSTACK_KEY;
     const { full_name, email, phone_number, amount } = details;
 
     if (full_name && email && phone_number && (selectAmount || amount)) {
@@ -70,7 +66,7 @@ const Payment = ({ onCancel, setPaymentModal, setShowSuccessModal }) => {
         key: paystackKey,
         name: full_name,
         email: email,
-        amount: amount * 100 || selectAmount * 100,
+        amount: (selectAmount || amount) * 100,
         ref: "" + Math.floor(Math.random() * 1000000000 + 1),
         onClose: () => {
           alert("Window closed.");

@@ -27,10 +27,10 @@ const Layout = () => {
       <Rep />
 
       <div className="btn-wrap-lay">
-        <div className="btn-box">
+        {/* <div className="btn-box">
           <FaMoneyBillWave size={20} className="icon" />
           <p>Wishlsit</p>
-        </div>
+        </div> */}
         <div className="btn-box" onClick={() => setShowModal(true)}>
           <MdEditNote size={20} className="icon" />
           <p>Cash gift</p>

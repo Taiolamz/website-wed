@@ -8,7 +8,11 @@ const Success = ({ onCancel, onRoute }) => {
     <div className="success-wrap">
       <FaTimes className="icon" onClick={onCancel} />
       <p className="emoji">💕💕🫶🏽💕💕</p>
-      <p className="text">A heartfelt thank you for your generous support</p>
+      <p className="text"></p>
+      <p className="text">
+        Payment Successful. <br /> A heartfelt thank you for your generous
+        support
+      </p>
       {/* btn wrap */}
 
       <p className="return-wrap" onClick={onRoute}>
