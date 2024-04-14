@@ -1,8 +1,7 @@
 .details-wrap {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  font-family: var(--fancy-font);
+  // gap: 1rem;
   min-height: 100vh;
   text-align: center;
   align-items: center;
@@ -10,13 +9,24 @@
   background: url("../assets/background-two.png");
   background-size: cover;
   background-color: #f2f1f1;
+  font-family: "Mulish", sans-serif;
+  max-height: 100%;
 
   .story-header {
-    font-weight: 500;
-    font-size: 2.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 0.4rem solid #560202;
-    margin-top: 5rem;
+    font-weight: 300;
+    font-size: 2rem;
+    display: flex;
+    gap: 0.5rem;
+    // padding-bottom: 0.5rem;
+    // border-bottom: 0.4rem solid #560256;
+
+    // font-family: "Pacifico";
+    justify-content: center;
+    margin-top: 3rem;
+
+    .story-head {
+      border-bottom: 0.4rem solid #560256;
+    }
 
     @media screen and (max-width: 768px) {
       font-size: 2rem;
@@ -27,7 +37,7 @@
   .story-subtext {
     font-size: 1.5rem;
     font-weight: 500;
-    font-family: var(--fancy-font);
+
     letter-spacing: 0.1rem;
 
     @media screen and (max-width: 768px) {
@@ -38,10 +48,13 @@
   .story-time {
     font-weight: 400;
     text-align: center;
-    display: flex;
+    // display: flex;
     width: 50rem;
     line-height: 2rem;
-    letter-spacing: 0.1rem;
+    // letter-spacing: 0.1rem;
+    .read-more {
+      cursor: pointer;
+    }
 
     @media screen and (max-width: 768px) {
       width: 100%;
@@ -57,7 +70,7 @@
     gap: 1rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow-x: scroll;
-   padding-bottom: 3rem;
+    padding-bottom: 3rem;
     width: 100%;
 
     .img {

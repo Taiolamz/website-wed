@@ -1,7 +1,9 @@
 import Details from "../pages/details";
 import Faq from "../pages/faq";
 import HomePage from "../pages/hompage";
+import Photo from "../pages/photo";
 import Story from "../pages/story";
+import Appreciation from "./appreciation";
 import Layout from "./layout";
 
 export const routes_group = [
@@ -11,14 +13,18 @@ export const routes_group = [
   },
   {
     element: Story,
-    path: "/our-story",
+    path: "/our-love-note",
   },
   {
     element: Details,
-    path: "/details",
+    path: "/how-we-met",
   },
   {
-    element: Faq,
-    path: "/faq",
+    element: Photo,
+    path: "/pictures",
+  },
+  {
+    element: Appreciation,
+    path: "/appreciation",
   },
 ];

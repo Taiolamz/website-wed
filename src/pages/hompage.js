@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import "../styles/homepage.css";
 import RingImage from "../assets/wedding-ring.png";
-import CakeImage from "../assets/wedding-cake.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -18,10 +17,11 @@ const HomePage = () => {
       >
         <div className="image-box">
           <p className="head-text">Folayemi & Oloruntoba </p>
-          <p className="married-text">are getting married</p>
+          <p className="married-text">Are getting married</p>
           {/* <div className="address-block"> */}
           <p className="sub-txt">05-11-2024 ​ </p>
-          <p className="sub-txt">#Ease24</p>
+          <p className="sub-text"></p>
+          <p className="sub-txt-ease">#Ease24</p>
         </div>
       </div>
       {/* </div> */}

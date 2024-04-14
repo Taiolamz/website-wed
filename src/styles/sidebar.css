@@ -1,31 +1,36 @@
 .sidebar-wrap {
-  font-family: var(--fancy-font);
   display: flex;
   flex-direction: column;
-  position: fixed;
-  top: 0;
-  padding: 5rem;
-  gap: 1rem;
-  z-index: 99;
+  background-color: #fff;
+  font-family: "Mulish", sans-serif;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s, opacity 0.3s;
+  z-index: 9999;
+  width: 15rem;
   letter-spacing: 0.1rem;
-  transition: all 0.3s;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.5);
 }
-.sidebar-wrap .sidebar-box {
+.sidebar-wrap .side-content {
+  width: 100%;
+  padding: 1rem 2rem;
+}
+.sidebar-wrap .side-content .sidebar-box {
   cursor: pointer;
   transition: 0.1s ease-in-out;
 }
-.sidebar-wrap .sidebar-box:hover {
+.sidebar-wrap .side-content .sidebar-box:hover {
   color: var(--brown-color);
-  transform: scale(1.2);
-  font-weight: 800;
+  font-weight: bold;
 }
-.sidebar-wrap .sidebar-active-box {
+.sidebar-wrap .side-content .sidebar-active-box {
   color: var(--brown-color);
   transform: scale(1.2);
   font-weight: bold;
 }
 
-.sidebar-wrap-right {
-  right: 0;
-  transition: all 0.3s;
+.open-side-wrap {
+  /* Increase max-height and adjust opacity to reveal the content */
+  max-height: 100vh;
+  opacity: 1;
 }/*# sourceMappingURL=sidebar.css.map */

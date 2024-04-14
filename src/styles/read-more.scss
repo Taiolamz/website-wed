@@ -1,0 +1,41 @@
+.read-more-con {
+  position: relative;
+
+  padding: 1rem;
+  height: 100%;
+  width: 100%;
+  .top-wrap {
+    display: flex;
+    justify-content: space-between;
+
+    .title {
+      font-weight: 600;
+    }
+  }
+  .icon {
+    color: #281d1d;
+    cursor: pointer;
+  }
+  .read-more-wrap {
+    overflow-y: scroll;
+    max-width: 40rem;
+    max-height: 40rem;
+
+  
+    &::-webkit-scrollbar {
+        width: 0.5rem;
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: #ffffff;
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+        background: #310131;
+      }
+  }
+}

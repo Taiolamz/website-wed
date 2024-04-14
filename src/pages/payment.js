@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles/form.css";
 import { FaArrowLeft } from "react-icons/fa";
-import ImageOne from "../assets/image-one.jpg";
+import ImageFour from "../assets/image-four.jpg";
 import PaystackPop from "@paystack/inline-js";
 
 const Payment = ({ onCancel, setPaymentModal, setShowSuccessModal }) => {
@@ -85,12 +85,6 @@ const Payment = ({ onCancel, setPaymentModal, setShowSuccessModal }) => {
             };
           });
         },
-        // callback: (response) => {
-        //   let message = "Payment complete! Reference: " + response.reference;
-        //   alert(message);
-        //   setShowSuccessModal(true);
-        //   onCancel();
-        // },
       });
 
       handler.openIframe();
@@ -101,13 +95,10 @@ const Payment = ({ onCancel, setPaymentModal, setShowSuccessModal }) => {
 
   return (
     <div className="form-wrap">
-      {/* image wrap start */}
       <div className="left-wrap">
-        <img src={ImageOne} alt="love image" />
+        <img src={ImageFour} alt="love image" />
       </div>
-      {/* image wrap end */}
 
-      {/* form wrap start*/}
       <div className="right-wrap">
         <div className="title-wrap">
           <FaArrowLeft
@@ -128,16 +119,13 @@ const Payment = ({ onCancel, setPaymentModal, setShowSuccessModal }) => {
           />
           <p className="text-head">We love and Appreciate You</p>
         </div>
-        {/* <FaTimes size={20} className="cancel-icon" onClick={onCancel} /> */}
         <form className="form-group" onSubmit={handleSubmit}>
           {Object.keys(details).map((detail, index) => (
             <div className="form-box">
               {detail === "amount" ? (
                 <span className="currency-unit"> NGN </span>
               ) : null}
-              <label key={index} htmlFor={formatLabel(detail)}>
-                {/* {formatLabel(detail)} */}
-              </label>
+              <label key={index} htmlFor={formatLabel(detail)}></label>
               <input
                 name={detail}
                 type="text"
@@ -193,7 +181,6 @@ const Payment = ({ onCancel, setPaymentModal, setShowSuccessModal }) => {
           </button>
         </form>
       </div>
-      {/* form wrap end*/}
     </div>
   );
 };

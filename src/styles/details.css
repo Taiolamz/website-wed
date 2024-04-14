@@ -1,8 +1,6 @@
 .details-wrap {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  font-family: var(--fancy-font);
   min-height: 100vh;
   text-align: center;
   align-items: center;
@@ -10,13 +8,19 @@
   background: url("../assets/background-two.png");
   background-size: cover;
   background-color: #f2f1f1;
+  font-family: "Mulish", sans-serif;
+  max-height: 100%;
 }
 .details-wrap .story-header {
-  font-weight: 500;
-  font-size: 2.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 0.4rem solid #560202;
-  margin-top: 5rem;
+  font-weight: 300;
+  font-size: 2rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 3rem;
+}
+.details-wrap .story-header .story-head {
+  border-bottom: 0.4rem solid #560256;
 }
 @media screen and (max-width: 768px) {
   .details-wrap .story-header {
@@ -27,7 +31,6 @@
 .details-wrap .story-subtext {
   font-size: 1.5rem;
   font-weight: 500;
-  font-family: var(--fancy-font);
   letter-spacing: 0.1rem;
 }
 @media screen and (max-width: 768px) {
@@ -38,10 +41,11 @@
 .details-wrap .story-time {
   font-weight: 400;
   text-align: center;
-  display: flex;
   width: 50rem;
   line-height: 2rem;
-  letter-spacing: 0.1rem;
+}
+.details-wrap .story-time .read-more {
+  cursor: pointer;
 }
 @media screen and (max-width: 768px) {
   .details-wrap .story-time {

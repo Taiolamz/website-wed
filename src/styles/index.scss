@@ -1,6 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Bad+Script&family=Inter:slnt,wght@-10..0,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Bad+Script&family=Inter:slnt,wght@-10..0,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bad+Script&family=Cabin:ital,wght@0,400..700;1,400..700&family=Dancing+Script:wght@400..700&family=Dosis:wght@200..800&family=Inter:slnt,wght@-10..0,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lobster&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Pacifico&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Signika:wght@300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bad+Script&family=Inter:slnt,wght@-10..0,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
-// @import url("https://fonts.googleapis.com/css2?family=Bad+Script&family=Dosis:wght@200..800&family=Inter:slnt,wght@-10..0,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bad+Script&family=Dancing+Script:wght@400..700&family=Dosis:wght@200..800&family=Inter:slnt,wght@-10..0,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bad+Script&family=Dancing+Script:wght@400..700&family=Dosis:wght@200..800&family=Inter:slnt,wght@-10..0,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Pacifico&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bad+Script&family=Cabin:ital,wght@0,400..700;1,400..700&family=Mulish:wght@200;300;400;500;600;700;900&family=Dancing+Script:wght@400..700&family=Dosis:wght@200..800&family=Inter:slnt,wght@-10..0,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Pacifico&family=Signika:wght@300..7000&family=Lobster&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Mulish:wght@200;300;400;500;600;700;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 root {
   --pink-color: #ffc0cb;
   --text-color: #281d1d;
@@ -32,7 +37,8 @@ html {
 body {
   font-size: 1rem !important;
   color: var(--text-color) !important;
-  font-family: "Bad Script", cursive;
+  // font-family: "Bad Script", cursive;
+  font-family: "Mulish", sans-serif;
   font-weight: 300;
   top: 0;
   bottom: 0;
