@@ -3,13 +3,13 @@ import "../styles/form.css";
 import { FaArrowLeft } from "react-icons/fa";
 import ImageFour from "../assets/image-four.jpg";
 import PaystackPop from "@paystack/inline-js";
+import { NumericFormat } from "react-number-format";
 
 const Payment = ({ onCancel, setPaymentModal, setShowSuccessModal }) => {
   const [details, setDetails] = useState({
     full_name: "",
     email: "",
     phone_number: "",
-    amount: "",
   });
   const [selectAmount, setSelectAmount] = useState("");
 
@@ -50,12 +50,34 @@ const Payment = ({ onCancel, setPaymentModal, setShowSuccessModal }) => {
     },
   ];
 
-  function formatNumber(number) {
-    return number.toLocaleString(undefined, {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    });
+  function formatNumberWithoutComma(numb) {
+    var regex = /[,\sNG]/g;
+    var result = numb.replace(regex, "");
+    return result;
   }
+
+  const handleShowAmount = () => {
+    const newAmount = formatNumberWithoutComma(selectAmount);
+
+    if (Number(newAmount) > 1999) {
+      return Number(newAmount) + Number(newAmount) * 0.016 + 100;
+    } else {
+      return Number(newAmount) + Number(newAmount) * 0.016;
+    }
+  };
+
+  const handleAmountChange = (e) => {
+    const newValue = e.target.value;
+    if (newValue === "") {
+      setSelectAmount(newValue);
+      return;
+    }
+    const numericValue = parseFloat(newValue.replace(/,/g, ""));
+    if (!isNaN(numericValue)) {
+      setSelectAmount(numericValue.toLocaleString());
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const paystackKey = process.env.REACT_APP_PAYSTACK_KEY;
@@ -66,7 +88,7 @@ const Payment = ({ onCancel, setPaymentModal, setShowSuccessModal }) => {
         key: paystackKey,
         name: full_name,
         email: email,
-        amount: (selectAmount || amount) * 100,
+        amount: handleShowAmount() * 100,
         ref: "" + Math.floor(Math.random() * 1000000000 + 1),
         onClose: () => {
           alert("Window closed.");
@@ -131,11 +153,7 @@ const Payment = ({ onCancel, setPaymentModal, setShowSuccessModal }) => {
                 type="text"
                 id={detail}
                 placeholder={`Enter ${formatLabel(detail).toLowerCase()}`}
-                value={
-                  detail === "amount"
-                    ? formatNumber(selectAmount)
-                    : details[detail]
-                }
+                value={details[detail]}
                 className={`input ${
                   details[detail]
                     ? "input-active"
@@ -145,28 +163,48 @@ const Payment = ({ onCancel, setPaymentModal, setShowSuccessModal }) => {
                 } `}
                 onChange={(e) => {
                   const { name, value } = e.target;
-                  if (name === "amount") {
-                    setSelectAmount(value);
-                  } else {
-                    handleChange(name, value);
-                  }
+                  handleChange(name, value);
                 }}
               />
-              {detail === "amount" && (
-                <div className="amount-wrap">
-                  {amountDisplay.map((chi, idx) => (
-                    <div
-                      className="amount"
-                      onClick={() => setSelectAmount(chi.value)}
-                      key={idx}
-                    >
-                      <p className="text">{chi.label}</p>
-                    </div>
-                  ))}
-                </div>
-              )}
             </div>
           ))}
+          <div className="form-box">
+            <label className="currency-unit"> NGN </label>
+
+            <NumericFormat
+              className={`input ${selectAmount && "input-active"}`}
+              decimalScale={3}
+              style={{ paddingLeft: "2.5rem" }}
+              decimalSeparator="."
+              type="text"
+              name="amount"
+              onChange={handleAmountChange}
+              thousandSeparator={","}
+              value={selectAmount}
+              id="amount"
+              placeholder="Enter Amount"
+            />
+
+            {selectAmount && (
+              <p style={{ color: "#565454", fontSize: ".8rem" }}>
+                {formatNumberWithoutComma(selectAmount) < 2000
+                  ? "+1.5% processing fee"
+                  : "+1.5% + ₦100 processing fee"}
+              </p>
+            )}
+
+            <div className="amount-wrap">
+              {amountDisplay.map((chi, idx) => (
+                <div
+                  className="amount"
+                  onClick={() => setSelectAmount(chi.label)}
+                  key={idx}
+                >
+                  <p className="text">{chi.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
           <button
             className={`btn-wrap ${
               details.full_name &&
@@ -177,7 +215,12 @@ const Payment = ({ onCancel, setPaymentModal, setShowSuccessModal }) => {
                 : "btn-disable"
             }`}
           >
-            Proceed to Paystack
+            {details.full_name &&
+            details?.email &&
+            details.phone_number &&
+            selectAmount
+              ? `Pay ${handleShowAmount().toFixed(2)}`
+              : "Pay"}
           </button>
         </form>
       </div>
