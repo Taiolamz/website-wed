@@ -9,6 +9,8 @@ import Modal from "react-awesome-modal";
 import { FaMoneyBillWave } from "react-icons/fa";
 import Success from "./pages/success-pay";
 import "./styles/layout.css";
+import { Helmet } from "react-helmet";
+import Image from "../src/assets/wedding-ring.png";
 
 function App() {
   const [isOpen, setOpen] = useState(false);
@@ -24,6 +26,9 @@ function App() {
   }, [showModal]);
   return (
     <React.Fragment>
+      <Helmet>
+        <title>#Ease24</title>
+      </Helmet>
       <div className="harmburger-menu">
         <Hamburger toggled={isOpen} toggle={setOpen} color="#fff" />
         <Sidebar isOpen={isOpen} />
