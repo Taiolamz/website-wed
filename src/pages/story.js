@@ -1,12 +1,8 @@
 import React, { useEffect } from "react";
 import "../styles/story.css";
-import Carousel from "react-bootstrap/Carousel";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import LoveVideo from "../assets/love-video.mp4";
-// import { Player } from "video-react";
-// import '~video-react/dist/video-react.css'; // import css
-// import ExampleCarouselImage from "components/ExampleCarouselImage";
 
 const Story = () => {
   useEffect(() => {

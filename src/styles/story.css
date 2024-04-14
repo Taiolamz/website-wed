@@ -5,6 +5,7 @@
   align-items: center;
   min-height: 100vh;
   font-family: "Mulish", sans-serif;
+  width: 100%;
 }
 .story-wrap .video-background {
   position: absolute;
@@ -17,7 +18,7 @@
 }
 .story-wrap .content {
   position: relative;
-  z-index: 1; /* Ensure content appears above the video */
+  z-index: 1;
   color: white;
   text-align: center;
   padding: 20px;
@@ -29,10 +30,22 @@
   width: 40rem;
   justify-content: center;
 }
+@media screen and (max-width: 768px) {
+  .story-wrap .content .quote-wrap {
+    width: 100%;
+  }
+}
 .story-wrap .content .quote-wrap .top-text {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  text-shadow: 2px 2px 4px rgb(0, 0, 0);
+}
+@media screen and (max-width: 768px) {
+  .story-wrap .content .quote-wrap .top-text {
+    width: 100%;
+  }
 }
 .story-wrap .content .quote-wrap .quote-text {
   font-size: 1.8rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 4px rgb(0, 0, 0);
 }/*# sourceMappingURL=story.css.map */

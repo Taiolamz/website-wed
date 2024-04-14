@@ -23,15 +23,15 @@ const Photo = () => {
         <div className="image-wrap-grid">
           <LazyLoadImage effect="blur" src={ImageFour} alt="image" />
           <img src={ImageSix} alt="image" />
+          <img src={ImageThree} alt="image" />
           <img src={ImageTwo} alt="image" />
           <img src={ImageOne} alt="image" />
           <img src={ImageSeven} alt="image" />
           <img src={ImageThree} alt="image" />
-          <img src={ImageFive} alt="image" />
-          <img src={ImageThree} alt="image" />
 
           <img src={ImageTwo} alt="image" />
           <img src={ImageOne} alt="image" />
+          <img src={ImageFive} alt="image" />
           <img src={ImageFour} alt="image" />
           <img src={ImageTen} alt="image" />
         </div>

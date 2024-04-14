@@ -2,17 +2,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   background: url("../assets/black-love-bg.jpg");
   font-family: "Mulish", sans-serif;
-  //   text-transform: uppercase;
   font-size: 1rem;
+  @media screen and (max-width: 768px) {
+    padding: 3rem;
+  }
   .appreciate-box {
     width: 30rem;
     text-align: center;
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* White box shadow */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
   }
 }

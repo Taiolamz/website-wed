@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { Navigate, Route, Routes, useNavigate } from "react-router";
 import { routes_group } from "./components/routes";
 import Sidebar from "./components/sidebar";
-import Layout from "./components/layout";
 import { Squash as Hamburger } from "hamburger-react";
 import Payment from "./pages/payment";
 import Modal from "react-awesome-modal";
