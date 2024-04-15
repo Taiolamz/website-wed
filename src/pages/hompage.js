@@ -18,7 +18,6 @@ const HomePage = () => {
         <div className="image-box">
           <p className="head-text">Folayemi & Oloruntoba </p>
           <p className="married-text">Are getting married</p>
-          {/* <div className="address-block"> */}
           <p className="sub-txt">05-11-2024 ​ </p>
           <p className="sub-text"></p>
           <p className="sub-txt-ease">#Ease24</p>

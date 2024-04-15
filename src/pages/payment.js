@@ -82,7 +82,8 @@ const Payment = ({ onCancel, setPaymentModal, setShowSuccessModal }) => {
     reference: new Date().getTime().toString(),
     email: details.email,
     amount: handleShowAmount() * 100,
-    publicKey: process.env.REACT_APP_PAYSTACK_KEY,
+    // publicKey: process.env.REACT_APP_PAYSTACK_KEY,
+    publicKey: "pk_live_a01e4a772cbd7ef6993ec71411819390c07947ac",
   };
 
   const handlePaystackSuccessAction = () => {
