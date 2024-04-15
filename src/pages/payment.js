@@ -83,7 +83,7 @@ const Payment = ({ onCancel, setPaymentModal, setShowSuccessModal }) => {
     const paystackKey = process.env.REACT_APP_PAYSTACK_KEY;
     const { full_name, email, phone_number, amount } = details;
 
-    if (full_name && email && phone_number && (selectAmount || amount)) {
+    if (full_name && email && phone_number && selectAmount)  {
       let handler = PaystackPop.setup({
         key: paystackKey,
         name: full_name,
