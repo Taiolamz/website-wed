@@ -20,22 +20,22 @@
     overflow-y: scroll;
     max-width: 40rem;
     max-height: 40rem;
+    letter-spacing: 0.06rem;
 
-  
     &::-webkit-scrollbar {
-        width: 0.5rem;
-      }
+      width: 0.5rem;
+    }
 
-      &::-webkit-scrollbar-track {
-        background-color: #ffffff;
-        -webkit-border-radius: 10px;
-        border-radius: 10px;
-      }
+    &::-webkit-scrollbar-track {
+      background-color: #ffffff;
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+    }
 
-      &::-webkit-scrollbar-thumb {
-        -webkit-border-radius: 10px;
-        border-radius: 10px;
-        background: #310131;
-      }
+    &::-webkit-scrollbar-thumb {
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+      background: #310131;
+    }
   }
 }

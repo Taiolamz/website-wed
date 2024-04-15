@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import HomePage from "../pages/hompage";
 import "../styles/layout.css";
-
 
 const Layout = () => {
   return (

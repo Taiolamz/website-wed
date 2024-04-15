@@ -17,10 +17,6 @@
     font-size: 2rem;
     display: flex;
     gap: 0.5rem;
-    // padding-bottom: 0.5rem;
-    // border-bottom: 0.4rem solid #560256;
-
-    // font-family: "Pacifico";
     justify-content: center;
     margin-top: 3rem;
 
@@ -48,10 +44,10 @@
   .story-time {
     font-weight: 400;
     text-align: center;
-    // display: flex;
     width: 50rem;
     line-height: 2rem;
-    // letter-spacing: 0.1rem;
+    // letter-spacing: 0.06rem;
+
     .read-more {
       cursor: pointer;
     }

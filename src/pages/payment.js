@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "../styles/form.css";
 import { FaArrowLeft } from "react-icons/fa";
 import ImageFour from "../assets/image-four.jpg";
-import PaystackPop from "@paystack/inline-js";
 import { NumericFormat } from "react-number-format";
+import { PaystackButton } from "react-paystack";
 
 const Payment = ({ onCancel, setPaymentModal, setShowSuccessModal }) => {
   const [details, setDetails] = useState({
@@ -78,41 +78,44 @@ const Payment = ({ onCancel, setPaymentModal, setShowSuccessModal }) => {
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const paystackKey = process.env.REACT_APP_PAYSTACK_KEY;
-    const { full_name, email, phone_number, amount } = details;
+  const config = {
+    reference: new Date().getTime().toString(),
+    email: details.email,
+    amount: handleShowAmount() * 100,
+    publicKey: process.env.REACT_APP_PAYSTACK_KEY,
+  };
 
-    if (full_name && email && phone_number && selectAmount)  {
-      let handler = PaystackPop.setup({
-        key: paystackKey,
-        name: full_name,
-        email: email,
-        amount: handleShowAmount() * 100,
-        ref: "" + Math.floor(Math.random() * 1000000000 + 1),
-        onClose: () => {
-          alert("Window closed.");
-        },
-        onSuccess: () => {
-          setPaymentModal(false);
-          setShowSuccessModal(true);
-          setSelectAmount("");
-          setDetails((prev) => {
-            return {
-              ...prev,
-              full_name: "",
-              email: "",
-              phone_number: "",
-              amount: "",
-            };
-          });
-        },
-      });
+  const handlePaystackSuccessAction = () => {
+    console.log();
+    setPaymentModal(false);
+    setShowSuccessModal(true);
+    setSelectAmount("");
+    setDetails((prev) => {
+      return {
+        ...prev,
+        full_name: "",
+        email: "",
+        phone_number: "",
+      };
+    });
+  };
 
-      handler.openIframe();
-    } else {
-      return;
-    }
+  const handlePaystackCloseAction = () => {
+    console.log("closed");
+  };
+
+  const componentProps = {
+    ...config,
+    disabled: true,
+    text:
+      details.full_name &&
+      details?.email &&
+      details.phone_number &&
+      selectAmount
+        ? `Pay ${handleShowAmount().toFixed(2)}`
+        : "Pay",
+    onSuccess: () => handlePaystackSuccessAction(),
+    onClose: handlePaystackCloseAction,
   };
 
   return (
@@ -141,7 +144,7 @@ const Payment = ({ onCancel, setPaymentModal, setShowSuccessModal }) => {
           />
           <p className="text-head">We love and Appreciate You</p>
         </div>
-        <form className="form-group" onSubmit={handleSubmit}>
+        <div className="form-group">
           {Object.keys(details).map((detail, index) => (
             <div className="form-box">
               {detail === "amount" ? (
@@ -205,24 +208,26 @@ const Payment = ({ onCancel, setPaymentModal, setShowSuccessModal }) => {
               ))}
             </div>
           </div>
-          <button
-            className={`btn-wrap ${
-              details.full_name &&
-              details.email &&
-              selectAmount &&
-              details.phone_number
-                ? ""
-                : "btn-disable"
-            }`}
-          >
-            {details.full_name &&
-            details?.email &&
-            details.phone_number &&
-            selectAmount
-              ? `Pay ${handleShowAmount().toFixed(2)}`
-              : "Pay"}
-          </button>
-        </form>
+
+          {!details.full_name &&
+          !details.email &&
+          !selectAmount &&
+          !details.phone_number ? (
+            <div className="btn-wrap btn-disable">Pay</div>
+          ) : (
+            <PaystackButton
+              {...componentProps}
+              className={`btn-wrap ${
+                details.full_name &&
+                details.email &&
+                selectAmount &&
+                details.phone_number
+                  ? ""
+                  : "btn-disable"
+              }`}
+            />
+          )}
+        </div>
       </div>
     </div>
   );

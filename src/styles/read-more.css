@@ -19,6 +19,7 @@
   overflow-y: scroll;
   max-width: 40rem;
   max-height: 40rem;
+  letter-spacing: 0.06rem;
 }
 .read-more-con .read-more-wrap::-webkit-scrollbar {
   width: 0.5rem;

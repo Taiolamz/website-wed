@@ -2,7 +2,7 @@ import "../styles/sidebar.css";
 import React from "react";
 import { useNavigate } from "react-router";
 
-const Sidebar = ({ isOpen }) => {
+const Sidebar = ({ isOpen, setOpen }) => {
   const sideitems = [
     {
       name: "Home 👩🏽‍❤️‍👨🏾",
@@ -39,7 +39,10 @@ const Sidebar = ({ isOpen }) => {
               className={`sidebar-box ${
                 location === path ? "sidebar-active-box" : ""
               }`}
-              onClick={() => navigate(path)}
+              onClick={() => {
+                navigate(path);
+                setOpen(false);
+              }}
             >
               <p>{name}</p>
             </div>

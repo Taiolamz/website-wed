@@ -17,7 +17,7 @@ const Success = ({ onCancel, onRoute }) => {
 
       <p className="return-wrap" onClick={onRoute}>
         <IoReturnDownBackOutline />
-        Continue on our homepage
+        Continue on our love page
       </p>
     </div>
   );

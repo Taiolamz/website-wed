@@ -10,7 +10,6 @@ import { FaMoneyBillWave } from "react-icons/fa";
 import Success from "./pages/success-pay";
 import "./styles/layout.css";
 import { Helmet } from "react-helmet";
-import Image from "../src/assets/wedding-ring.png";
 
 function App() {
   const [isOpen, setOpen] = useState(false);
@@ -31,7 +30,7 @@ function App() {
       </Helmet>
       <div className="harmburger-menu">
         <Hamburger toggled={isOpen} toggle={setOpen} color="#fff" />
-        <Sidebar isOpen={isOpen} />
+        <Sidebar isOpen={isOpen} setOpen={setOpen} />
       </div>
       <Routes>
         <Route path="/" element={<Navigate to="/home" replace />} />
