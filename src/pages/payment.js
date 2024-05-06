@@ -4,6 +4,7 @@ import { FaArrowLeft } from "react-icons/fa";
 import ImageFour from "../assets/image-four.jpg";
 import { NumericFormat } from "react-number-format";
 import { PaystackButton } from "react-paystack";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Payment = ({ onCancel, setPaymentModal, setShowSuccessModal }) => {
   const [details, setDetails] = useState({
@@ -122,7 +123,7 @@ const Payment = ({ onCancel, setPaymentModal, setShowSuccessModal }) => {
   return (
     <div className="form-wrap">
       <div className="left-wrap">
-        <img src={ImageFour} alt="love image" />
+        <LazyLoadImage effect="blur" src={ImageFour} alt="love image" />
       </div>
 
       <div className="right-wrap">
@@ -228,6 +229,17 @@ const Payment = ({ onCancel, setPaymentModal, setShowSuccessModal }) => {
               }`}
             />
           )}
+          <p
+            style={{
+              fontSize: ".8rem",
+              marginBottom: "-3rem",
+              paddingBottom: "-3rem",
+            }}
+          >
+            You can also choose to make a transfer to{" "}
+            <span style={{ fontWeight: "800" }}>2001792946, KUDA Account, </span>
+            <span style={{ fontWeight: "800" }}>Oloruntoba Fasakin</span>
+          </p>
         </div>
       </div>
     </div>

@@ -6,6 +6,7 @@ import Modal from "react-awesome-modal";
 import ReadMore from "../components/read-more";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Details = () => {
   const [showMore, setShowMore] = useState(false);
@@ -50,14 +51,16 @@ const Details = () => {
 
       {/* first side start*/}
       <div className="image-wrap">
-        <img
+        <LazyLoadImage
+          effect="blur"
           data-aos="fade-right"
           data-aos-duration="1000"
           className="img"
           src={ImageOne}
           alt=""
         />
-        <img
+        <LazyLoadImage
+          effect="blur"
           data-aos="fade-left"
           data-aos-duration="1000"
           className="img"
